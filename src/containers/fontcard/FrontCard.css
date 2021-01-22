@@ -1,0 +1,99 @@
+.frontcard{
+   position:relative;
+   /* background-image: url("https://thumbs.dreamstime.com/b/abstract-sea-background-sandy-summer-beach-bokeh-lights-light-blue-sky-beautiful-texture-space-131428079.jpg"); */
+   
+   background: #00c3ff;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #ffff1c, #00c3ff);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #ffff1c, #00c3ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+   /* font-size: 150%; */
+   border-radius: 2px;
+   box-shadow: 0px 5px 8px 5px grey;
+   border: solid rgb(65, 207, 124);
+   border-width: 2px;
+}
+.frontcard .city{
+   color: rgba(165, 42, 42, 0.534);
+   text-shadow: 0px 2px 2px rgb(8, 8, 8);
+   font-weight: bold;
+   
+}
+.date{
+   color: rgb(65, 68, 225);
+   font-weight: 600;
+
+}
+.leftparameter{
+   font-weight: 600;
+   font-size: 120%;
+   color: rgb(54, 3, 3);
+   font-family:monospace
+}
+.leftvalue{
+   font-weight: 550;
+   font-size: 80%;
+   color: rgb(39, 36, 189);
+   font-family:cursive;
+   
+}
+.temperature{
+   color: red;
+   font-weight: 700;
+   
+   text-shadow: 1px 2px 1px yellow;
+
+}
+.description{
+   color: royalblue;
+   font-weight: 500;
+   font-family: cursive;
+}
+.rightparameter{
+   font-weight: 600;
+   font-size: 120%;
+   color: rgb(54, 3, 3);
+   font-family:monospace
+}
+.rightvalue{
+   font-weight: 550;
+   font-size: 80%;
+   color: rgb(39, 36, 189);
+   font-family:cursive
+
+}
+.forecast{
+   font-weight: 500;
+   
+   color: saddlebrown;
+   border-radius: 5px;
+   box-shadow: 0px 0px 5px 1px rgb(180, 137, 137);
+   border: solid rgb(0, 81, 255);
+   border-width: thin;
+   
+}
+.more{
+   /* color: rgb(53, 46, 46); */
+   font-weight: 500;
+   border-radius: 6px;
+   box-shadow:inset 0px 1px 0px 0px #a6827e;
+   border:1px solid #54381e;
+   background-color:#7d5d3b;
+   
+   /* box-shadow: 0px 3px 5px 4px rgb(133, 141, 145); */
+   /* background: linear-gradient(rgb(94, 255, 0),yellow);
+   
+   text-align: center;
+   border-radius: 7px;
+   font-size: 100%;
+   cursor: grab;
+   border: solid rgb(69, 73, 62);
+
+   border-width: thin; */
+
+}
+@media(min-width:900px){
+   .frontcard{
+      font-size: 150%;
+   }
+}

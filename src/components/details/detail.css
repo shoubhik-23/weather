@@ -1,0 +1,20 @@
+.detail{
+   transition: all 1.5s ease-in-out ;
+background: linear-gradient(white,grey);
+border: solid;
+border-width: thin;
+   width: 80%;
+
+   
+}
+.detail .col{
+   font-weight: 500;
+   padding-right: 0;
+   margin-right: 0;
+   padding-left: 3%;
+}
+
+.detail button{
+   font-weight: bold;
+   border-radius: 8px;
+}
