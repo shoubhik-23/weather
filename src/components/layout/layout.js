@@ -11,7 +11,7 @@ import Nav from "react-bootstrap/Nav";
 const layout = (props) => {
   return (
     <React.Fragment>
-      <div className="container-fluid px-4">
+      <div className="container-fluid px-3">
         <Navbar collapseOnSelect expand="lg" variant="dark">
           <Navbar.Brand></Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />

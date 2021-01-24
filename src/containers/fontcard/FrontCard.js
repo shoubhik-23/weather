@@ -6,8 +6,8 @@ import Detail from "../../components/details/detail";
 import * as ac from "../../Store/Actions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { TextField, Button, Container } from "@material-ui/core";
-import { Alert } from "react-bootstrap";
+import { TextField, Container } from "@material-ui/core";
+import { Alert, Button } from "react-bootstrap";
 import SearchIcon from "@material-ui/icons/Search";
 import Spinner from "../../UI/Spinner";
 import Modal from "../../UI/Modal";
@@ -217,130 +217,131 @@ class FrontCard extends React.Component {
     return (
       <React.Fragment>
         {this.state.error ? <div>{alert}</div> : null}
-        <Container maxWidth="md">
-          <div className="container-fluid  mt-5  px-0 frontcard ">
-            <div className=" row container pr-2 m-0 mb-2  justify-content-end ">
-              <TextField
-                autoFocus
-                size="small"
-                error={false}
-                inputRef={this.state.myref}
-                style={{
-                  marginTop: "4px",
-                  backgroundColor: "burlywood",
-                  borderRadius: "5px",
-                }}
-                onKeyDown={this.keyHandler}
-                // className=" offset col-l-3 border border-primary"
-                onChange={this.search_handler}
-                placeholder="Enter city"
-                value={this.state.search_value}
-                label="City"
-                variant="standard"
-              />
 
-              <Button
-                startIcon={
-                  <SearchIcon
-                    style={{ fontSize: "270%", padding: "0" }}
-                  ></SearchIcon>
-                }
-                variant="contained"
-                onClick={this.submit}
-                className=" p-0 bg-info text-white"
-              ></Button>
-            </div>
+        <div className="container  mt-5  px-0 frontcard ">
+          <div className=" row container pr-2 m-0 mb-2  justify-content-end ">
+            <TextField
+              autoFocus
+              error={false}
+              inputRef={this.state.myref}
+              style={{
+                marginTop: "4px",
+                backgroundColor: "whitesmoke",
+                borderRadius: "5px",
+              }}
+              onKeyDown={this.keyHandler}
+              // className=" offset col-l-3 border border-primary"
+              onChange={this.search_handler}
+              placeholder="Enter city"
+              value={this.state.search_value}
+              label="City"
+              variant="standard"
+            />
+            <Button size="md" variant="info">
+              <SearchIcon
+                style={{ fontSize: "150%", padding: "0" }}
+              ></SearchIcon>
+            </Button>
 
-            <div className="container p-0 m-0  ">
-              <div className="row p-0 m-0 ">
-                <div className="col m-0 pl-3 left_side ">
-                  <h className=" m-0 p-0 h1 city">{this.state.city_name}</h>
-                  <p className="pl-5 h6">{this.state.country_name}</p>
-                  <div className="row p-0  m-0  ">
-                    <div className="col h4 m-0 mt-3 p-0 text-center">
-                      <i>{day}</i>
-                    </div>
-                  </div>
-                  <div className="row m-0 mt-2 p-0 ">
-                    <div className="col m-0 p-0   text-center date">
-                      {new Date(this.state.sunrise * 1000).getDate()}
-                      <span> {month}</span>
-                    </div>
-                  </div>
-                  <div className="row m-0 mt-2 p-0 ">
-                    <div className="col  m-0 p-0 leftparameter">
-                      Visibility:{" "}
-                    </div>
-                    <div className="col m-0 p-1 leftvalue">
-                      {" "}
-                      {this.state.visibility}
-                    </div>
-                  </div>
+            {/* <Button
+              startIcon={
+                <SearchIcon
+                  style={{ fontSize: "270%", padding: "0" }}
+                ></SearchIcon>
+              }
+              variant="contained"
+              onClick={this.submit}
+              className=" p-0 bg-info text-white"
+            ></Button> */}
+          </div>
 
-                  <div className="row m-0 mt-2 p-0 ">
-                    <div className="col m-0 p-0 leftparameter">Humidity:</div>
-                    <div className="col m-0 p-0 leftvalue">
-                      {this.state.humidity}
-                    </div>
+          <div className="container p-0 m-0  ">
+            <div className="row p-0 m-0 ">
+              <div className="col m-0 pl-3 left_side ">
+                <h className=" m-0 p-0 h1 city">{this.state.city_name}</h>
+                <p className="pl-5 h6">{this.state.country_name}</p>
+                <div className="row p-0  m-0  ">
+                  <div className="col h4 m-0 mt-3 p-0 text-center">
+                    <i>{day}</i>
                   </div>
-                  <div className="row m-0 mt-2 p-0  ">
-                    <div className="col m-0 p-0 leftparameter">Pressure:</div>
-                    <div className="col m-0 p-0  leftvalue">
-                      {this.state.pressure}
-                    </div>
-                  </div>
-
-                  <Link to="/forecast">
-                    {" "}
-                    <p className=" btn m-0  mt-5 ml-2 mb-2 more btn-success">
-                      4 Days Forecast
-                    </p>
-                  </Link>
                 </div>
-                {this.state.loading ? <Spinner></Spinner> : null}
+                <div className="row m-0 mt-2 p-0 ">
+                  <div className="col m-0 p-0   text-center date">
+                    {new Date(this.state.sunrise * 1000).getDate()}
+                    <span> {month}</span>
+                  </div>
+                </div>
+                <div className="row m-0 mt-2 p-0 ">
+                  <div className="col  m-0 p-0 leftparameter">Visibility: </div>
+                  <div className="col m-0 p-1 leftvalue">
+                    {" "}
+                    {this.state.visibility}
+                  </div>
+                </div>
 
-                <div className="col m-0 p-0  right_side">
-                  <p className="h1 m-0 p-0 temperature">
-                    {this.state.temperature} &#176;C
+                <div className="row m-0 mt-2 p-0 ">
+                  <div className="col m-0 p-0 leftparameter">Humidity:</div>
+                  <div className="col m-0 p-0 leftvalue">
+                    {this.state.humidity}
+                  </div>
+                </div>
+                <div className="row m-0 mt-2 p-0  ">
+                  <div className="col m-0 p-0 leftparameter">Pressure:</div>
+                  <div className="col m-0 p-0  leftvalue">
+                    {this.state.pressure}
+                  </div>
+                </div>
+
+                <Link to="/forecast">
+                  {" "}
+                  <p className=" btn m-0  mt-5 ml-2 mb-2 more btn-success">
+                    4 Days Forecast
                   </p>
-                  <Icon url={this.state.icon}></Icon>
-                  <div className="row m-0 mt-3 p-0  text-center">
-                    <div className="col m-0 p-0 description">
-                      {this.state.description}
-                    </div>
+                </Link>
+              </div>
+              {this.state.loading ? <Spinner></Spinner> : null}
+
+              <div className="col m-0 p-0  right_side">
+                <p className="h1 m-0 p-0 temperature">
+                  {this.state.temperature} &#176;C
+                </p>
+                <Icon url={this.state.icon}></Icon>
+                <div className="row m-0 mt-3 p-0  text-center">
+                  <div className="col m-0 p-0 description">
+                    {this.state.description}
                   </div>
-                  <div className="row m-0 mt-2 p-0 ">
-                    <div className="col m-0 p-0 rightparameter">Sunrise:</div>
-                    <div className="col m-0 p-0 leftvalue">
-                      {new Date(this.state.sunrise * 1000).getHours()}:00 am
-                    </div>
+                </div>
+                <div className="row m-0 mt-2 p-0 ">
+                  <div className="col m-0 p-0 rightparameter">Sunrise:</div>
+                  <div className="col m-0 p-0 leftvalue">
+                    {new Date(this.state.sunrise * 1000).getHours()}:00 am
                   </div>
-                  <div className="row m-0 mt-2  p-0 ">
-                    <div className="col m-0 p-0 rightparameter">Sunset:</div>
-                    <div className="col m-0 p-0 rightvalue">
-                      {new Date(this.state.sunset * 1000).getHours()}:00 pm
-                    </div>
+                </div>
+                <div className="row m-0 mt-2  p-0 ">
+                  <div className="col m-0 p-0 rightparameter">Sunset:</div>
+                  <div className="col m-0 p-0 rightvalue">
+                    {new Date(this.state.sunset * 1000).getHours()}:00 pm
                   </div>
-                  <div className="d-flex  mt-5 justify-content-center">
-                    <div
-                      onClick={this.showdetailshandler}
-                      className=" btn btn-success more "
-                    >
-                      Detailed Info
-                    </div>
+                </div>
+                <div className="d-flex  mt-5 justify-content-center">
+                  <div
+                    onClick={this.showdetailshandler}
+                    className=" btn btn-success more "
+                  >
+                    Detailed Info
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <Detail
-            details={this.state}
-            show={this.state.showDetails}
-            showhandler={this.hidedetailshandler}
-          ></Detail>
-          {/* <Coming show={this.state.shownextday} hide={this.hideforecasthandler}></Coming> */}
-        </Container>
+        <Detail
+          details={this.state}
+          show={this.state.showDetails}
+          showhandler={this.hidedetailshandler}
+        ></Detail>
+        {/* <Coming show={this.state.shownextday} hide={this.hideforecasthandler}></Coming> */}
       </React.Fragment>
     );
   }
