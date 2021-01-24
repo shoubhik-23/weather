@@ -38,7 +38,7 @@ class FrontCard extends React.Component {
     visibility: 0,
     pressure: 0,
     error: false,
-    myref: React.createRef(),
+    // myref: React.createRef(),
     show: true,
 
     showDetails: false,
@@ -46,7 +46,7 @@ class FrontCard extends React.Component {
   };
 
   componentDidMount() {
-    this.state.myref.current.focus();
+    // this.state.myref.current.focus();
     axios
       .get(
         "https://api.openweathermap.org/data/2.5/weather?q=delhi&units=metric&appid=bf73df6199bfd3a91c21add767aaaff6"
@@ -84,9 +84,9 @@ class FrontCard extends React.Component {
         console.log(error);
       });
   }
-  componentDidUpdate() {
-    this.state.myref.current.focus();
-  }
+  // componentDidUpdate() {
+  //   this.state.myref.current.focus();
+  // }
   showdetailshandler = () => {
     this.setState((previous) => {
       return {
@@ -221,9 +221,7 @@ class FrontCard extends React.Component {
         <div className="container  mt-5  px-0 frontcard ">
           <div className=" row container pr-2 m-0 mb-2  justify-content-end ">
             <TextField
-              autoFocus
               error={false}
-              inputRef={this.state.myref}
               style={{
                 marginTop: "4px",
                 backgroundColor: "whitesmoke",
@@ -237,7 +235,7 @@ class FrontCard extends React.Component {
               label="City"
               variant="standard"
             />
-            <Button size="md" variant="info">
+            <Button onClick={this.submit} size="md" variant="info">
               <SearchIcon
                 style={{ fontSize: "150%", padding: "0" }}
               ></SearchIcon>

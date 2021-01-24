@@ -11,7 +11,7 @@ const detail = (props) => {
       className="container detail"
       style={{
         opacity: props.show ? "1" : "0",
-        transform: props.show ? "translateY(-75vh)" : "translateY(-1000px)",
+        transform: props.show ? "translateY(-57vh)" : "translateY(-1000px)",
       }}
     >
       <header className="h3">{props.details.city_name}</header>
