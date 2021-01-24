@@ -1,13 +1,53 @@
-import React from "react"
-import Image from "../../assets/cardimage"
-import "./cards.css"
-const cards=(props)=>{
-   let arr=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
-   let day=arr[new Date(props.lists.dt_txt).getDay()]
+import React from "react";
+import Image from "../../assets/cardimage";
+import { Card } from "react-bootstrap";
+import "./cards.css";
+const cards = (props) => {
+  let arr = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = arr[new Date(props.lists.dt_txt).getDay()];
 
-   return(
-      <React.Fragment>
-         <div className="container mb-4 mx-0 pt-2 px-0 fcards  ">
+  return (
+    <React.Fragment>
+      <Card
+        style={{ width: "18rem" }}
+        className="mb-5   d-inline-block fcards "
+      >
+        <Card.Header>
+          <h4 className="h4">{day}</h4>
+        </Card.Header>
+        <Card.Body>
+          <Card.Title>
+            <h className="h4">{props.lists.main.temp} &#176;C</h>{" "}
+          </Card.Title>
+          <Card.Text>
+            {/* Some quick example text to build on the card title and make up the
+            bulk of the card's content. */}
+
+            <Image url={props.icon}></Image>
+            <p className="description">{props.lists.weather[0].description}</p>
+
+            <div className="col px-0  mx-0  text-center mb-4">
+              <strong>Humidity:</strong>
+              <i> {props.lists.main.humidity} </i>
+            </div>
+
+            <div className="col px-0 mx-0  text-center">
+              <strong> Visibility:</strong>
+              <i> {props.lists.visibility}</i>
+            </div>
+          </Card.Text>
+        </Card.Body>
+      </Card>
+
+      {/* <div className="container mb-4 mx-0 pt-2 px-0 fcards  ">
             <h4 className="h4">{day}</h4>
             
             
@@ -33,9 +73,8 @@ const cards=(props)=>{
             
             </div>
            
-         </div>
-
-      </React.Fragment>
-   )
-}
-export default cards
+         </div> */}
+    </React.Fragment>
+  );
+};
+export default cards;
